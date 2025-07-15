@@ -38,12 +38,12 @@
 
 ## 5. User Stories
 
-- *As a new user, I want to sign up with just my phone number so I can start quickly without remembering passwords.*
-- *As a user, I want the app to scan my contacts and tell me who else is on PeacePath so I know who I can classify.*
-- *As a user, I want to swipe left to "block" and right to "neutral" so classification feels fast and familiar.*
-- *As a user, I want the app to alert me when a blocked contact is within \~150 m so I can take a detour.*
-- *As a user, I want to pause all location tracking at any time so I stay in control of my privacy.*
-- *As a user, I want to review and edit my previous decisions so I can unblock someone if situations change.*
+- _As a new user, I want to sign up with just my phone number so I can start quickly without remembering passwords._
+- _As a user, I want the app to scan my contacts and tell me who else is on PeacePath so I know who I can classify._
+- _As a user, I want to swipe left to "block" and right to "neutral" so classification feels fast and familiar._
+- _As a user, I want the app to alert me when a blocked contact is within \~150 m so I can take a detour._
+- _As a user, I want to pause all location tracking at any time so I stay in control of my privacy._
+- _As a user, I want to review and edit my previous decisions so I can unblock someone if situations change._
 
 ---
 
@@ -70,7 +70,7 @@
 
 | Requirement                                                                            | Priority | Notes                                         |
 | -------------------------------------------------------------------------------------- | -------- | --------------------------------------------- |
-| Card stack built with *react‑native‑deck‑swiper*                                       | High     | Haptic feedback on swipe                      |
+| Card stack built with _react‑native‑deck‑swiper_                                       | High     | Haptic feedback on swipe                      |
 | Card shows contact’s display name & initials/avatar if available                       | Medium   | No photo if not in contacts                   |
 | Persist decision to `users/{uid}/relationships/{targetUid}` with `status`, `updatedAt` | High     | `status ∈ { blocked, neutral, reconsidered }` |
 | Undo last swipe (snackbar)                                                             | Medium   |                                               |
@@ -203,7 +203,7 @@ users/{uid}/location {
 
 1. Should proximity processing move to server for more accuracy vs. client for privacy?
 2. Minimum viable navigation integration (open Google/Apple Maps vs. embedded)?
-3. Secondary classification statuses (e.g., *friend*, *family*) for future positive features?
+3. Secondary classification statuses (e.g., _friend_, _family_) for future positive features?
 
 ---
 
@@ -218,5 +218,4 @@ users/{uid}/location {
 
 ---
 
-*End of PRD*
-
+_End of PRD_
