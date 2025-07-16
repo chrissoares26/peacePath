@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
 import { useAuth } from '@/src/hooks/useAuth';
 
@@ -18,10 +18,24 @@ export default function IndexScreen() {
 
   // Show loading screen while determining auth state
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff' }}>
-      <Text style={{ fontSize: 20, color: '#0284c7', fontWeight: '600' }}>
+    <View style={styles.container}>
+      <Text style={styles.loadingText}>
         Loading...
       </Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+  },
+  loadingText: {
+    fontSize: 20,
+    color: '#0284c7',
+    fontWeight: '600',
+  },
+});

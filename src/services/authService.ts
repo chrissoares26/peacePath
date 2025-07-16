@@ -6,6 +6,7 @@ import {
 } from 'firebase/auth';
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db } from '../../firebase.config';
+import { ContactMatchingService } from './contactMatchingService';
 
 export interface UserProfile {
   uid: string;
@@ -77,6 +78,10 @@ export class AuthService {
     };
 
     await setDoc(userDocRef, userProfile);
+    
+    // Register user's phone number for contact matching
+    const contactMatchingService = new ContactMatchingService();
+    await contactMatchingService.registerUserPhoneNumber(user.uid, phoneNumber, user.email || '');
   }
 
   async signOut(): Promise<AuthServiceResult> {

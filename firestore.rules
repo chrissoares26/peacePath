@@ -6,6 +6,14 @@ service cloud.firestore {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
     
+    // Phone hashes for contact matching
+    match /userPhoneHashes/{phoneHash} {
+      // Users can read all phone hashes for contact matching
+      allow read: if request.auth != null;
+      // Users can only write their own phone hash
+      allow write: if request.auth != null && request.auth.uid == resource.data.uid;
+    }
+    
     // Deny all other access
     match /{document=**} {
       allow read, write: if false;
